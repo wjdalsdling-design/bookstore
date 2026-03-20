@@ -11,6 +11,7 @@
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 
+    
 </head>
 
 <body> 
@@ -68,12 +69,27 @@
 
     </header>
     <main>
-        <aside></aside>
+        <aside>
+            <div class="sidebar">단기북스</div>
+            <ul class="menu">
+                <li class="active">홈</li>
+                <li>전체 교재</li>
+                <li>베스트셀러</li>
+        
+                <li class="sub">주간</li>
+                <li class="sub">월간</li>
+        
+                <li class="divider"></li>
+        </aside>
+
         <div id="main_content">
             <div id="slider">
                 <div id="slider_txt">
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <h2>공단기 Pick!<br>추천 교재</h2>
+                    <p>단기북스 MD가<br>자신있게 추천하는 오늘의 책</p>
+
                 </div>
                 <!-- Swiper -->
                 <div class="swiper mySwiper">
@@ -85,10 +101,30 @@
                     <div class="swiper-pagination"></div>
                 </div>              
             </div>
-            <div id="seach"></div>
-            <div id="best"></div>
+
+            <div id="seach">
+                <div class="seachbox">
+                     <input type="text" placeholder="저자명/교재명 검색">
+                </div>
+
+            <div id="best">
+                <h3>공단기 베스트셀러 ></h3>
+                <div class="boxWrap">
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </div>
+            </div>
+
             <div id="banner"></div>
-            <div id="new">
+            <div id="new"> 
                 <h3>새로 나온 교재</h3>
                 <!-- Swiper -->
                 <div class="swiper newSwiper">
@@ -138,10 +174,21 @@
 
         <div id="footer_txt">
             <p>(주)에스티유니타스</p>
-            <p>전화번호 : 1670-1419 이메일주소 : STunitas_cs@stunitas.com 주소 : 서울특별시 구로구 경인로 662, 15층 (신도림동, 디큐브시티 제타워동)</p>
-            <p>
-            </p>
 
+            <ul>
+                <li><a href="#">전화번호 : 1670-1419</a></li>
+                <li><a href="#">이메일주소 : STunitas_cs@stunitas.com</a></li>
+                <li><a href="#">주소 : 서울특별시 구로구 경인로 662, 15층 (신도림동, 디큐브시티 제타워동)</a></li>
+            </ul>
+            
+            <ul>
+                <li><a href="#">대표이사 : 김형국</a></li>
+                <li><a href="#">에스티아카데미평생교육원(제1021호)</a></li>
+                <li><a href="#">사업자 등록번호 : 119-86-27573</a></li>
+                <li><a href="#">통신판매업신고 : 2022-서울구로-2373 사용자 정보확인</a></li>
+                <li><a href="#">호스팅제공자 : © 2022, Amazon Web Services, Inc</a></li>
+            </ul>
+            
         </div>
     
 

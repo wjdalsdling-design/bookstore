@@ -5,7 +5,7 @@ var swiper = new Swiper(".mySwiper", {
         prevEl: "#slider .swiper-button-prev",
     },
     pagination: {
-        el: "#slier .swiper-pagination",
+        el: "#slider .swiper-pagination",
         clickable: true,
     },
     autoplay: {
