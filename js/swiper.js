@@ -1,18 +1,21 @@
 // #slider swiper
-var swiper = new Swiper(".mySwiper", {
-    navigation: {
-        nextEl: "#slider .swiper-button-next",
-        prevEl: "#slider .swiper-button-prev",
-    },
-    pagination: {
-        el: "#slider .swiper-pagination",
-        clickable: true,
-    },
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-});
+// var swiper = new Swiper(".mySwiper", {
+//     navigation: {
+//         nextEl: "#slider .swiper-button-next",
+//         prevEl: "#slider .swiper-button-prev",
+//     },
+//     pagination: {
+//         el: "#slider .swiper-pagination",
+//         clickable: true,
+//         renderBullet: function (index, className) {
+//           return `<img class="${className}" src="${}">`;
+//         },
+//     },
+//     autoplay: {
+//         delay: 3000,
+//         disableOnInteraction: false,
+//       },
+// });
 
 
 //#new swiper
