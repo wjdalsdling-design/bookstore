@@ -25,7 +25,9 @@ var newswiper = new Swiper(".newSwiper", {
     spaceBetween: 30,
     pagination: {
         el: "#new .swiper-pagination",
+        type: "fraction",
         clickable: true,
+        
     },
     navigation: {
         nextEl: "#new .swiper-button-next",

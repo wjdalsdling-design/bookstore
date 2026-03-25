@@ -1,7 +1,7 @@
 async function bookData() {
     const params = new URLSearchParams({
         target: "title",
-        query: "여행",
+        query: "심리",
         size: 10
     });
 
@@ -36,11 +36,13 @@ async function bookData() {
 
             // 요소 생성 및 추가
             box.innerHTML = `<img src="${data.documents[i].thumbnail}">
-                    <h3>${data.documents[i].title}</h3>
-                    <h6>${data.documents[i].authors}</h6>
-                    <p>${data.documents[i].price}<p>
-                    <button>click</button>
-                    `
+                    <h4 class="title">${doc.title}</h4>
+                    <p class="author">${doc.authors}</p>
+                    <p class="price-line">
+                    <span class="discount">10%</span>
+                    <span class="price">${doc.price ? Number(doc.price).toLocaleString() : 0}원</span>
+                    </p>
+                `;
         });
 
     } catch (error) {
@@ -53,7 +55,7 @@ bookData();
 async function bookData2() {
     const params = new URLSearchParams({
         target: "title",
-        query: "요리",
+        query: "서핑",
         size: 10
     });
 
@@ -89,13 +91,18 @@ async function bookData2() {
             // 요소 생성 및 추가
             box.innerHTML = `<img src="${data.documents[i].thumbnail}">
                     <div class="book_content">
-                        <h3>${data.documents[i].title}</h3>
-                        <h6>${data.documents[i].authors}</h6>
-                        <p>${data.documents[i].price}<p>
-                        <button>click</button>
-                    </div>
-                    `
+                        <h4>${data.documents[i].title}</h4>
+                        <p class="author">${doc.authors}</p>
+                        <p class="price-line">
+                        <span class="discount">10%</span>
+                        <span class="price">${doc.price ? Number(doc.price).toLocaleString() : 0}원</span>
+                        </p>
+                        <p class="desc">${doc.contents}</p>
+                        </div>
+                        `
         });
+
+        
 
         var swiper = new Swiper(".mySwiper", {
             navigation: {
@@ -123,54 +130,84 @@ async function bookData2() {
 bookData2();
 
 
-async function bookData3() {
-    const params = new URLSearchParams({
-        target: "title",
-        query: "커피",
-        size: 10
-    });
+document.addEventListener("DOMContentLoaded", () => {
 
-    const url = `https://dapi.kakao.com/v3/search/book?${params}`;
+    async function bookData3(query, selector) {
+        const params = new URLSearchParams({
+            target: "title",
+            query: query,
+            size: 10
+        });
 
+        const url = `https://dapi.kakao.com/v3/search/book?${params}`;
 
-    try {
-        const response = await fetch(url, {
-            method: 'GET',
-            headers: {
-                Authorization: "KakaoAK 14b6e8ad0e91fdfc74ea9b367563b36b"
+        try {
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    Authorization: "KakaoAK 14b6e8ad0e91fdfc74ea9b367563b36b"
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP 오류! 상태 코드: ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log(data);
+
+            const boxElements = document.querySelectorAll(selector);
+
+            boxElements.forEach((box, i) => {
+                const doc = data.documents[i];
+                if (!doc) return;
+
+                box.innerHTML = `
+                    <img src="${doc.thumbnail || 'https://via.placeholder.com/150'}">
+                    <span class="rank">${i + 1}</span>
+                    <h4 class="title">${doc.title}</h4>
+                    <p class="author">${doc.authors}</p>
+                    <p class="price-line">
+                    <span class="discount">10%</span>
+                    <span class="price">${doc.price ? Number(doc.price).toLocaleString() : 0}원</span>
+                    </p>
+                `;
+            });
+
+        } catch (error) {
+            console.log('에러발생', error);
+        }
+    }
+
+    const tabs = document.querySelectorAll("#booktap li");
+    const tap1 = document.querySelector(".tap1");
+    const tap2 = document.querySelector(".tap2");
+
+    tap1.classList.add("active");
+    tabs[0].classList.add("active");
+
+    bookData3("스포츠", ".tap1 .box");
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => {
+
+            tabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+
+            if (index === 0) {
+                tap1.classList.add("active");
+                tap2.classList.remove("active");
+
+                bookData3("스포츠", ".tap1 .box");
+
+            } else {
+                tap2.classList.add("active");
+                tap1.classList.remove("active");
+
+                bookData3("건강", ".tap2 .box");
             }
         });
+    });
+    
 
-        if (!response.ok) {
-            throw new Error(`HTTP 오류! 상태 코드: ${response.status}`);
-        }
-
-        const data = await response.json();
-        console.log(data);
-
-        // .box 요소 전체 선택
-        const boxElements = document.querySelectorAll("#best .box");
-        // console.log(boxElements)
-
-
-        // documents 데이터를 각 box에 대응하여 렌더링
-        boxElements.forEach((box, i) => {
-            const doc = data.documents[i];
-
-            if (!doc) return; // 데이터가 부족할 경우 생략
-
-            // 요소 생성 및 추가
-            box.innerHTML = `<img src="${data.documents[i].thumbnail}">
-                    <h3>${data.documents[i].title}</h3>
-                    <h6>${data.documents[i].authors}</h6>
-                    <p>${data.documents[i].price}<p>
-                    <button>click</button>
-                    `
-        });
-
-    } catch (error) {
-        console.log('에러발생', error);
-    }
-}
-
-bookData3();
+});
