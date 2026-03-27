@@ -1,110 +1,4 @@
 @charset "utf-8";
-.container {
-    width: 1140px;
-    height: 100%;
-    margin: 0 auto;
-}
-
-
-header {
-    width: 100%;
-    height: 164px;
-}
-
-#header_top {
-    width: 100%;
-    height: 44px;
-    background-color: #f7f7f7;
-}
-
-#header_top .container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-#login ul {
-    display: flex;
-    justify-content: flex-start;
-}
-
-#login li {
-    position: relative;
-    padding: 0 10px;
-}
-
-#login li::after {
-    content: "|";
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 8px;
-    color: #ccc;
-}
-
-#login li:last-child::after {
-    content: "";
-}
-
-#login a {
-    font-size: 12px;
-    font-weight: 500;
-    color: #333;
-    display: flex;
-}
-
-#logo {
-    width: 150px;
-    height: 40px;
-}
-
-#logo img {
-    height: 100%;
-}
-
-#header_main {
-    width: 1140px;
-    height: 70px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-}
-
-header select {
-    width: 80px;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    font-weight: bold;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    padding-left: 5px;
-}
-
-
-nav {
-    width: 100%;
-    height: 50px;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    font-weight: bold;
-}
-
-nav .container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-nav ul {
-    width: 700px;
-    height: 25px;
-    display: flex;
-    justify-content: space-between;
-}
 
 main {
     width: 1140px;
@@ -345,7 +239,7 @@ main {
 
 .box {
     margin-top: 30px;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -473,7 +367,7 @@ img {
 
 #new .swiper-slide img {
     width: 100%;
-    height: 250px;
+    height: 220px;
     display: flex;
     margin-top: 10px;
 }
@@ -527,32 +421,4 @@ img {
 
     flex-shrink: 0;   /* 핵심 */
     cursor: pointer;
-}
-
-/* footer */
-
-#union-footer {
-    padding: 24px 0 50px;
-    border-top: 1px solid var(--gray-30, #E0E3EB);
-    background: var(--white, #FFF);
-    min-width: var(--layout-min-width);
-    margin: 0 auto;
-}
-
-
-.footer {
-    width: 100%;
-    display: flex;
-    background: #f8f8f8;
-}
-
-.sel-box {
-    width: 180px;    
-    padding: 8px 10px;
-    border: 1px solid #ddd; 
-    border-radius: 5px;
-    background: #fff;
-    color: #333;
-    font-size: 12px;
-    outline: none;
 }

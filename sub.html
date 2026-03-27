@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단기북스 상세</title>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/sub.css">
+</head>
+
+
+<body>
+
+<header>
+
+        <div id="header_top">
+            <div class="container">
+                <div id="login">
+                    <ul>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
+                        <li><a href="#">장바구니</a></li>
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">내 강의실</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="header_main">
+            <div id="logo">
+                <img src="https://un-static.conects.com/un_static/img/common/logo/header_logo_dangibooks.png"
+                    href="단기북스">
+            </div>
+
+            <select id="options">
+                <option value="#">공단기</option>
+                <option value="#">기술단기</option>
+                <option value="#">소방단기</option>
+                <option value="#">공기업단기</option>
+                <option value="#">자단기</option>
+                <option value="#">영단기</option>
+                <option value="#">노무사단기</option>
+                <option value="#">법무사단기</option>
+            </select>
+        </div>
+
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="#">공단기 홈</a></li>
+                    <li><a href="#">선생님</a></li>
+                    <li><a href="#">수강신청</a></li>
+                    <li><a href="#">수험정보</a></li>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">교재</a></li>
+                    <li><a href="#">풀서비스</a></li>
+                    <li><a href="#">프리패스</a></li>
+                    <li><a href="#">프리미엄 서비스</a></li>
+
+                </ul>
+            </div>
+
+        </nav>
+
+    </header>
+
+<main>
+
+    <p>공단기 > 단기북스 > 추천</p>
+
+    <div class="book_detail_page">
+        <div class="book_info_box">
+
+            <div class="detail_container">
+
+                <div class="left_area">
+                    <div class="book-box">
+                        <div class="sub_box"></div>
+                    </div>
+                </div>
+
+                <div class="right_area">
+
+                    <div class="badge_area">
+                        <span class="badge badge1">추천</span>
+                        <span class="badge badge2">무료배송</span>
+                    </div>
+
+                    <h2 class="title"></h2>
+
+                    <table class="book_info_table">
+                        <tbody>
+                            <tr>
+                                <td>배송비</td>
+                                <td>무료배송</td>
+                            </tr>
+                            <tr>
+                                <td>저자</td>
+                                <td class="author"></td>
+                            </tr>
+                            <tr>
+                                <td>출판사</td>
+                                <td class="publisher"></td>
+                            </tr>
+                        </tbody>
+
+                        <div class="price"></div>
+
+                        <td colspan="2" class="btn_area">
+                            <button>장바구니</button>
+                            <button class="buy_now">바로 구매하기</button>
+                        </td>
+                        </tr>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <h3>연관 도서</h3>
+
+    <div id="new" class="swiper-container">
+        <div class="swiper-wrapper">
+            <!-- 슬라이드 10개 생성 (최대 10개 데이터 대응) -->
+            <div class="swiper-slide box"></div>
+            <div class="swiper-slide box"></div>
+            <div class="swiper-slide box"></div>
+            <div class="swiper-slide box"></div>
+            <div class="swiper-slide box"></div>
+            <div class="swiper-slide box"></div>
+            <div class="swiper-slide box"></div>
+            <div class="swiper-slide box"></div>
+            <div class="swiper-slide box"></div>
+            <div class="swiper-slide box"></div>
+        </div>
+
+        <!-- 좌우 버튼 -->
+        <button id="prevBtn" class="btn">‹</button>
+        <button id="nextBtn" class="btn">›</button>
+    </div>
+
+    <div class="tab-buttons">
+  <button class="tab-button active" data-tab="info">상품정보</button>
+  <button class="tab-button" data-tab="review">후기</button>
+  <button class="tab-button" data-tab="delivery">배송·교환</button>
+</div>
+
+<!-- 내용 영역 -->
+<div class="tab-content">
+  <div id="info" class="active">
+    <p>여기에 상품정보 내용을 넣으세요.</p>
+  </div>
+  <div id="review">
+    <p>여기에 후기 내용을 넣으세요.</p>
+  </div>
+  <div id="delivery">
+    <ul>교환 규정
+        <li>수령 후 90일 이내 주문 상품에 대해 상품의 결함으로 판매자와 협의된 경우 신청 가능합니다. (해외배송 상품 불가)</li>
+        <li>구매한 도서와 동일한 상품으로만 교환 가능합니다. (분철 옵션 추가 혹은 삭제, 다른 상품으로 변경 불가)</li>
+        <li>교환 도서가 수급 불가한 경우 환불로 진행 될 수 있습니다.</li>
+    </ul>
+    <br>
+    <ul>반품 규정
+        <li>수령 후 10일 이내에 신청이 가능합니다. (해외배송 상품 불가)</li>
+        <li>사은품이 포함 된 상품 반품 시에는 사은품을 함께 동봉하여 반품해 주셔야 합니다.</li>
+        <li>사용하거나 랩핑(비닐포장)제거한 경우, 분철한 도서의 경우는 반품이 불가합니다.</li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+    <div class="accordion-container">
+        <div class="accordion-item">
+            <div class="accordion-header">섹션 1
+                <i class="fa-solid fa-chevron-down icon"></i>
+            </div>
+            <div class="accordion-content">
+                <p>내용 1: 바닐라 스크립트로 구현한 아코디언입니다.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">섹션 2
+                <i class="fa-solid fa-chevron-down icon"></i>
+            </div>
+            <div class="accordion-content">
+                <p>내용 2: 클릭 시 해당 항목이 펼쳐집니다.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">섹션 3
+                <i class="fa-solid fa-chevron-down icon"></i>
+            </div>
+            <div class="accordion-content">
+                <p>내용 3: 다른 항목을 클릭하면 이전 항목은 닫힙니다.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="img_file">
+
+        <img src="https://contents.kyobobook.co.kr/dtl/cardnews/9791140710690_01.jpg" alt="img1">
+
+        <img src="https://contents.kyobobook.co.kr/dtl/cardnews/9791140710690_02.jpg" alt="img2">
+    </div>
+
+
+    <div class="img_main">
+        <img loading="lazy"
+            src="https://contents.kyobobook.co.kr/sih/fit-in/814x0/dtl/illustrate/690/i9791140710690.jpg" alt="메인 이미지">
+    </div>
+
+
+    <div id="tmpBox"></div>
+
+
+
+
+</main>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer_top">
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">강사모집</a></li>
+                </ul>
+            </div>
+            <div class="footer_middle">
+                <p>(주)에스티유니타스</p>
+                <ul class="line1">
+                    <li>전화번호: 1670-1419</li>
+                    <li>이메일주소 : STunitas_cs@stunitas.com</li>
+                    <li>주소 : 서울특별시 구로구 경인로 662, 15층 (신도림동, 디큐브시티 제타워동)</li>
+                </ul>
+    
+                <!-- 두 번째 줄 -->
+                <ul class="line2">
+                    <li>대표이사 : 김형국</li>
+                    <li>에스티아카데미평생교육원(제1021호)</li>
+                    <li>사업자 등록번호 : 119-86-27573</li>
+                    <li>통신판매업신고 : 2022-서울구로-2373 사용자 정보확인</li>
+                    <li>호스팅제공자 : © 2022, Amazon Web Services, Inc</li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="./js/book.js"></script>
+    <script src="./js/taps.js"></script>
+</body>
+
+</html>

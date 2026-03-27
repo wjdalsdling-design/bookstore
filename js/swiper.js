@@ -35,3 +35,4 @@ var newswiper = new Swiper(".newSwiper", {
     },
     slidesPerGroup: 3
 });
+

@@ -1,7 +1,7 @@
 async function bookData() {
     const params = new URLSearchParams({
         target: "title",
-        query: "심리",
+        query: "인생",
         size: 10
     });
 
@@ -102,7 +102,7 @@ async function bookData2() {
                         `
         });
 
-        
+
 
         var swiper = new Swiper(".mySwiper", {
             navigation: {
@@ -208,6 +208,154 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-    
+
 
 });
+
+
+
+
+async function bookData4() {
+    const REST_API_KEY = '14b6e8ad0e91fdfc74ea9b367563b36b';
+    const params = new URLSearchParams({
+        target: "title",
+        query: "인생의 의미"
+    });
+
+    const url = `https://dapi.kakao.com/v3/search/book?${params}`;
+
+    try {
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                Authorization: "KakaoAK 14b6e8ad0e91fdfc74ea9b367563b36b"
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP 오류! 상태 코드: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        // 요소 선택
+        const subBox = document.querySelector(".sub_box");
+        const titleEl = document.querySelector(".title");
+        const authorEl = document.querySelector(".author");
+        const publisherEl = document.querySelector(".publisher");
+        const priceEl = document.querySelector(".price");
+
+        // 데이터 추출
+        const book = data.documents[0];
+        const { title, thumbnail, authors, price, publisher } = book;
+
+        // ✅ 이미지
+        subBox.innerHTML = `<img src="${thumbnail}" alt="${title}">`;
+
+        // ✅ 텍스트 각각 넣기
+        authorEl.textContent = authors[0];
+        publisherEl.textContent = publisher;
+        priceEl.textContent = price.toLocaleString() + "원";
+        titleEl.textContent = title;
+
+    } catch (error) {
+        console.log('에러발생', error);
+    }
+}
+
+bookData4();
+
+//메모장으로 sub 텍스트 가져오기, 서버에 올려야 보임
+document.addEventListener("DOMContentLoaded", async function () {
+    try {
+        const response = await fetch("./txt/sub.txt");
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        const data = await response.text();
+        document.getElementById("tmpBox").innerHTML = data;
+
+    } catch (error) {
+        console.error("There was a problem with the fetch operation:", error);
+    }
+});
+
+
+
+
+
+
+
+
+
+const wrapper = document.querySelector("#new .swiper-wrapper");
+const slides = document.querySelectorAll("#new .swiper-slide");
+let currentIndex = 0;
+
+// 좌우 버튼 이벤트
+document.getElementById("prevBtn").addEventListener("click", () => {
+    currentIndex = currentIndex === 0 ? slides.length - 1 : currentIndex - 1;
+    updateSlider();
+});
+document.getElementById("nextBtn").addEventListener("click", () => {
+    currentIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
+    updateSlider();
+});
+
+function updateSlider() {
+    const width = slides[0].clientWidth;
+    wrapper.style.transform = `translateX(${-width * currentIndex}px)`;
+}
+
+// 기존 bookData 함수 응용
+async function bookData5() {
+    const params = new URLSearchParams({
+        target: "title",
+        query: "인생",
+        size: 10,
+    });
+    const url = `https://dapi.kakao.com/v3/search/book?${params}`;
+
+    try {
+        const response = await fetch(url, {
+            method: "GET",
+            headers: {
+                Authorization: "KakaoAK 14b6e8ad0e91fdfc74ea9b367563b36b"
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP 오류! 상태 코드: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        slides.forEach((box, i) => {
+            const doc = data.documents[i];
+            if (!doc) return;
+
+            box.innerHTML = `
+                <div class="book-card">
+                    <div class="book-image">
+                        <img src="${doc.thumbnail}" alt="${doc.title}">
+                    </div>
+                    <div class="book-info">
+                        <h4 class="title">${doc.title}</h4>
+                        <p class="author">${doc.authors.join(", ")}</p>
+                        <p class="price-line">
+                            <span class="discount">10%</span>
+                            <span class="price">${doc.price ? Number(doc.price).toLocaleString() : 0}원</span>
+                        </p>
+                    </div>
+                </div>
+            `;
+        });
+
+        updateSlider();
+    } catch (error) {
+        console.error("에러발생", error);
+    }
+}
+
+bookData5();
+
