@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,7 @@
 
 <body>
 
-<header>
+    <header>
 
         <div id="header_top">
             <div class="container">
@@ -68,165 +69,217 @@
 
     </header>
 
-<main>
+    <main>
 
-    <p>공단기 > 단기북스 > 추천</p>
+        <p>공단기 > 단기북스 > 추천</p>
 
-    <div class="book_detail_page">
-        <div class="book_info_box">
+        <div class="book_detail_page">
+            <div class="book_info_box">
 
-            <div class="detail_container">
+                <div class="detail_container">
 
-                <div class="left_area">
-                    <div class="book-box">
-                        <div class="sub_box"></div>
+                    <div class="left_area">
+                        <div class="book-box">
+                            <div class="sub_box"></div>
+                        </div>
+                    </div>
+
+                    <div class="right_area">
+
+                        <div class="badge_area">
+                            <span class="badge badge1">추천</span>
+                            <span class="badge badge2">무료배송</span>
+                        </div>
+
+                        <h2 class="title"></h2>
+
+                        <table class="book_info_table">
+                            <tbody>
+                                <tr>
+                                    <td>배송비</td>
+                                    <td>무료배송</td>
+                                </tr>
+                                <tr>
+                                    <td>저자</td>
+                                    <td class="author"></td>
+                                </tr>
+                                <tr>
+                                    <td>출판사</td>
+                                    <td class="publisher"></td>
+                                </tr>
+                            </tbody>
+
+                            <div class="price"></div>
+
+                            <td colspan="2" class="btn_area">
+                                <button>장바구니</button>
+                                <button class="buy_now">바로 구매하기</button>
+                            </td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <h3>연관 도서</h3>
+
+        <div id="new" class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- 슬라이드 10개 생성 (최대 10개 데이터 대응) -->
+                <div class="swiper-slide box"></div>
+                <div class="swiper-slide box"></div>
+                <div class="swiper-slide box"></div>
+                <div class="swiper-slide box"></div>
+                <div class="swiper-slide box"></div>
+                <div class="swiper-slide box"></div>
+                <div class="swiper-slide box"></div>
+                <div class="swiper-slide box"></div>
+                <div class="swiper-slide box"></div>
+                <div class="swiper-slide box"></div>
+            </div>
+
+            <!-- 좌우 버튼 -->
+            <button id="prevBtn" class="btn">‹</button>
+            <button id="nextBtn" class="btn">›</button>
+        </div>
+
+        <!-- 내용 영역 -->
+        <div id="content">
+            <div class="tab-content">
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="info" onclick="location.href='#info'">상품정보</button>
+                    <button class="tab-button" data-tab="review" onclick="location.href='#review'">후기</button>
+                    <button class="tab-button" data-tab="delivery" onclick="location.href='#delivery'">배송·교환</button>
+                </div>
+
+                <div id="info" class="card_container active">
+                    <div id="tmpBox"></div>
+                    <div class="img_file">
+                        <img src="https://contents.kyobobook.co.kr/dtl/cardnews/9791140710690_01.jpg" alt="img1">
+
+                        <img src="https://contents.kyobobook.co.kr/dtl/cardnews/9791140710690_02.jpg" alt="img2">
+                    </div>
+
+                    <div class="img_main">
+                        <div class="inner">>
+                            <img loading="lazy"
+                                src="https://contents.kyobobook.co.kr/sih/fit-in/814x0/dtl/illustrate/690/i9791140710690.jpg"
+                                alt="메인 이미지">
+                        </div>
+                        <div class="toggle" onclick="toggle(this)">펼치기 ▼</div>
+                    </div>
+                    <div class="card_container">
+                        <div class="card">
+                            <div class="header">
+                                <div>저자(글) <strong>토마스 힐란드 에릭센</strong></div>
+                            </div>
+
+                            <div class="tags">
+                                <span>인류학자</span>
+                                <span>대학/대학원 교수</span>
+                            </div>
+
+                            <div class="text">
+                                학계에서 손꼽히는 세계적인 사회인류학자. 그가 쓴 학술서는 30개 이상의 언어로 번역되어 많은 학교에서 인류학 교과서로 쓰인다. 인류학 연구에 대한 공로로
+                                주요한
+                                상을 다수 수상한
+                                학자인
+                                동시에
+                                대중에게 인기 높은
+                                인류학 커뮤니케이터이기도 하다. 그가 정의하는 작업의 기준은 세 가지다. 현대 사회를 이해하고, 인간으로 산다는 것의 의미를 이해하고, 세상을 더 나은 곳으로
+                                만드는
+                                방법을
+                                탐구하는 것.
+                                암 선고 이후에 삶에 대한 깊은 통찰을 얻었고 인류학 연구와 삶의 경험, 분야를 넘나드는 풍부한 지식을 모아 《인생의 의미》를 썼다. 이 책은 노르웨이에서 큰
+                                반향을
+                                일으킨
+                                베스트셀러가
+                                되었으며
+                                출간 후 그는
+                                '인생의 의미'라는 주제로 강연과 저술 활동을 활발히 이어가고 있다.
+                                현재 오슬로 대학교의 사회인류학 교수로 재직 중이다. 노르웨이 과학·문학 아카데미 회원, 왕립 인류학 연구소 명예 회원, 막스 플랑크 소사이어티의 객원
+                                회원이며,
+                                인류학계에서 가장
+                                권위
+                                있는
+                                스웨덴 인류학 및
+                                지리학회 금메달을 수상했고, 노르웨이 연구 위원회의 과학 소통 우수상, 오슬로 대학교 과학상과 연구상을 수상했다.
+                            </div>
+
+                            <div class="toggle" onclick="toggle(this)">펼치기 ▼</div>
+                        </div>
+
+                        <!-- 번역자 -->
+                        <div class="card">
+                            <div class="header">
+                                <div>번역 <strong>이영래</strong></div>
+                            </div>
+
+                            <div class="tags">
+                                <span>번역가</span>
+                                <span>출판 번역</span>
+                            </div>
+
+                            <div class="text">
+                                이화여자대학교 법학과를 졸업하였다. 현재 가족과 함께 캐나다에 살면서 번역에이전시 엔터스코리아에서 출판 기획 및 전문 번역가로 활동하고 있다. 주요 역서로는
+                                《파타고니아, 파도가
+                                칠 때는
+                                서핑을》 《모두 거짓말을 한다》 《누구도 나를 파괴할 수 없다》 《운동의 뇌과학》 외 다수가 있다.
+                            </div>
+
+                            <div class="toggle" onclick="toggle(this)">펼치기 ▼</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="right_area">
+                <div id="review" class="active">
+                    
+                </div>
+                <div id="delivery">
+                    <ul>교환 규정
+                        <li>수령 후 90일 이내 주문 상품에 대해 상품의 결함으로 판매자와 협의된 경우 신청 가능합니다. (해외배송 상품 불가)</li>
+                        <li>구매한 도서와 동일한 상품으로만 교환 가능합니다. (분철 옵션 추가 혹은 삭제, 다른 상품으로 변경 불가)</li>
+                        <li>교환 도서가 수급 불가한 경우 환불로 진행 될 수 있습니다.</li>
+                    </ul>
+                    <br>
+                    <ul>반품 규정
+                        <li>수령 후 10일 이내에 신청이 가능합니다. (해외배송 상품 불가)</li>
+                        <li>사은품이 포함 된 상품 반품 시에는 사은품을 함께 동봉하여 반품해 주셔야 합니다.</li>
+                        <li>사용하거나 랩핑(비닐포장)제거한 경우, 분철한 도서의 경우는 반품이 불가합니다.</li>
+                    </ul>
+                </div>
+            </div>
 
-                    <div class="badge_area">
-                        <span class="badge badge1">추천</span>
-                        <span class="badge badge2">무료배송</span>
-                    </div>
 
-                    <h2 class="title"></h2>
 
-                    <table class="book_info_table">
-                        <tbody>
-                            <tr>
-                                <td>배송비</td>
-                                <td>무료배송</td>
-                            </tr>
-                            <tr>
-                                <td>저자</td>
-                                <td class="author"></td>
-                            </tr>
-                            <tr>
-                                <td>출판사</td>
-                                <td class="publisher"></td>
-                            </tr>
-                        </tbody>
+            <div class="tabsticky">
 
-                        <div class="price"></div>
+                <!-- 책 제목 -->
+                <h2 id="sticky_title">인생의 의미</h2>
 
-                        <td colspan="2" class="btn_area">
-                            <button>장바구니</button>
-                            <button class="buy_now">바로 구매하기</button>
-                        </td>
-                        </tr>
-                    </table>
+                <!-- 가격 영역 -->
+                <div class="sticky_price_box">
+                    <span>총 상품 금액</span>
+                    <strong id="sticky_price">18,800원</strong>
+                </div>
 
+
+                <!-- 버튼 -->
+                <div class="sticky_btn_wrap">
+                    <button class="btn_cart">장바구니</button>
+                    <button class="btn_buy">바로 구매하기</button>
                 </div>
 
             </div>
 
         </div>
-    </div>
 
-    <h3>연관 도서</h3>
-
-    <div id="new" class="swiper-container">
-        <div class="swiper-wrapper">
-            <!-- 슬라이드 10개 생성 (최대 10개 데이터 대응) -->
-            <div class="swiper-slide box"></div>
-            <div class="swiper-slide box"></div>
-            <div class="swiper-slide box"></div>
-            <div class="swiper-slide box"></div>
-            <div class="swiper-slide box"></div>
-            <div class="swiper-slide box"></div>
-            <div class="swiper-slide box"></div>
-            <div class="swiper-slide box"></div>
-            <div class="swiper-slide box"></div>
-            <div class="swiper-slide box"></div>
-        </div>
-
-        <!-- 좌우 버튼 -->
-        <button id="prevBtn" class="btn">‹</button>
-        <button id="nextBtn" class="btn">›</button>
-    </div>
-
-    <div class="tab-buttons">
-  <button class="tab-button active" data-tab="info">상품정보</button>
-  <button class="tab-button" data-tab="review">후기</button>
-  <button class="tab-button" data-tab="delivery">배송·교환</button>
-</div>
-
-<!-- 내용 영역 -->
-<div class="tab-content">
-  <div id="info" class="active">
-    <p>여기에 상품정보 내용을 넣으세요.</p>
-  </div>
-  <div id="review">
-    <p>여기에 후기 내용을 넣으세요.</p>
-  </div>
-  <div id="delivery">
-    <ul>교환 규정
-        <li>수령 후 90일 이내 주문 상품에 대해 상품의 결함으로 판매자와 협의된 경우 신청 가능합니다. (해외배송 상품 불가)</li>
-        <li>구매한 도서와 동일한 상품으로만 교환 가능합니다. (분철 옵션 추가 혹은 삭제, 다른 상품으로 변경 불가)</li>
-        <li>교환 도서가 수급 불가한 경우 환불로 진행 될 수 있습니다.</li>
-    </ul>
-    <br>
-    <ul>반품 규정
-        <li>수령 후 10일 이내에 신청이 가능합니다. (해외배송 상품 불가)</li>
-        <li>사은품이 포함 된 상품 반품 시에는 사은품을 함께 동봉하여 반품해 주셔야 합니다.</li>
-        <li>사용하거나 랩핑(비닐포장)제거한 경우, 분철한 도서의 경우는 반품이 불가합니다.</li>
-    </ul>
-  </div>
-</div>
-
-
-
-
-    <div class="accordion-container">
-        <div class="accordion-item">
-            <div class="accordion-header">섹션 1
-                <i class="fa-solid fa-chevron-down icon"></i>
-            </div>
-            <div class="accordion-content">
-                <p>내용 1: 바닐라 스크립트로 구현한 아코디언입니다.</p>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <div class="accordion-header">섹션 2
-                <i class="fa-solid fa-chevron-down icon"></i>
-            </div>
-            <div class="accordion-content">
-                <p>내용 2: 클릭 시 해당 항목이 펼쳐집니다.</p>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <div class="accordion-header">섹션 3
-                <i class="fa-solid fa-chevron-down icon"></i>
-            </div>
-            <div class="accordion-content">
-                <p>내용 3: 다른 항목을 클릭하면 이전 항목은 닫힙니다.</p>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="img_file">
-
-        <img src="https://contents.kyobobook.co.kr/dtl/cardnews/9791140710690_01.jpg" alt="img1">
-
-        <img src="https://contents.kyobobook.co.kr/dtl/cardnews/9791140710690_02.jpg" alt="img2">
-    </div>
-
-
-    <div class="img_main">
-        <img loading="lazy"
-            src="https://contents.kyobobook.co.kr/sih/fit-in/814x0/dtl/illustrate/690/i9791140710690.jpg" alt="메인 이미지">
-    </div>
-
-
-    <div id="tmpBox"></div>
-
-
-
-
-</main>
+    </main>
 
     <footer id="footer">
         <div class="container">
@@ -245,7 +298,7 @@
                     <li>이메일주소 : STunitas_cs@stunitas.com</li>
                     <li>주소 : 서울특별시 구로구 경인로 662, 15층 (신도림동, 디큐브시티 제타워동)</li>
                 </ul>
-    
+
                 <!-- 두 번째 줄 -->
                 <ul class="line2">
                     <li>대표이사 : 김형국</li>
@@ -261,6 +314,7 @@
 
     <script src="./js/book.js"></script>
     <script src="./js/taps.js"></script>
+    <script src="./js/sub.js"></script>
 </body>
 
 </html>

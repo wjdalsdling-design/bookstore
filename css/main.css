@@ -29,7 +29,7 @@ main {
     padding: 30px 20px;
     font-size: 17px;
     font-weight: 700;
-    color: #fff;
+    color: #ffffff;
     background: linear-gradient(108.14deg, #1060ED -7.91%, #5A90F0 98.51%);
 }
 
@@ -109,6 +109,11 @@ main {
 
   bottom: 100px;
   top: auto;
+}
+
+#slider .swiper-button-prev svg,
+#slider .swiper-button-next svg{
+    height: 50%;
 }
 
 #slider .swiper-button-prev {
@@ -352,6 +357,7 @@ img {
 #new {
     width: 100%;
     height: 520px;
+    position: relative;
 }
 
 #new .swiper {
@@ -369,7 +375,7 @@ img {
     width: 100%;
     height: 220px;
     display: flex;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 
@@ -378,6 +384,11 @@ img {
 }
 
 #new .swiper-control {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -393,32 +404,38 @@ img {
 
 #new .swiper-pagination {
     position: relative;
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 500;
     margin: 0; 
     padding: 0; 
-    text-align: right;  
+    text-align: right;
+    bottom: auto;  
 }
 
 /* 화살표 그룹 */
 #new .swiper-nav {
+    width: 50%;
+    height: 100%;
     display: flex;
-    gap: 0px;
+    gap: 0px;    
 }
 
 #new .swiper-button-prev,
 #new .swiper-button-next {
     position: static;   /* flex 안에서는 필수 */
-    width: 28px;
-    height: 28px;
+    width: 25px;
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    margin-top: 0;
     background: #fff;
-
     flex-shrink: 0;   /* 핵심 */
     cursor: pointer;
+}
+
+#new .swiper-button-prev svg,
+#new .swiper-button-next svg {
+    height: 50%;
+
 }

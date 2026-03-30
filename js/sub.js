@@ -1,58 +1,29 @@
-function getQueryParam(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
+
+function toggle(btn) {
+  const text = btn.previousElementSibling;
+
+  text.classList.toggle("open");
+
+  if (text.classList.contains("open")) {
+    btn.innerText = "접기 ▲";
+  } else {
+    btn.innerText = "펼치기 ▼";
+  }
 }
 
-// 메인 함수 - API 호출 및 렌더링
-async function bookData() {
-    const REST_API_KEY = '7b2300fc6315bb65035d1a3c7b49b161';
-    const query = getQueryParam('query') || '미움받을 용기'; // 기본값도 지정 가능
+const tabButtons = document.querySelectorAll('.tab-button');
 
-    const params = new URLSearchParams({
-        target: "title",
-        query: query
-    });
+tabButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const targetTab = button.dataset.tab;
 
-    const url = `https://dapi.kakao.com/v3/search/book?${params}`;
+    // 1️⃣ 탭 활성화 변경
+    // document.querySelectorAll('.tab-content > div').forEach(div => div.classList.remove('active'));
+    // const tabContent = document.getElementById(targetTab);
+    // tabContent.classList.add('active');
 
-    try {
-        const response = await fetch(url, {
-            method: 'GET',
-            headers: {
-                Authorization: `KakaoAK ${REST_API_KEY}`
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP 오류! 상태 코드: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        if (!data.documents || data.documents.length === 0) {
-            alert('검색 결과가 없습니다.');
-            return;
-        }
-
-        const book = data.documents[0];
-        const { title, thumbnail, authors, publisher, isbn, price, contents } = book;
-
-        // DOM에 데이터 넣기
-        document.getElementById('bookThumbnail').src = thumbnail || '';
-        document.getElementById('bookThumbnail').alt = title || '책 표지 이미지';
-        document.getElementById('bookTitle').textContent = title || '제목 없음';
-        document.getElementById('bookAuthors').textContent = authors ? authors.join(', ') : '정보 없음';
-        document.getElementById('bookPublisher').textContent = publisher || '정보 없음';
-        document.getElementById('bookISBN').textContent = isbn || '정보 없음';
-        document.getElementById('bookPrice').textContent = price ? `${price.toLocaleString()}원` : '가격 정보 없음';
-        document.getElementById('bookContents').textContent = contents || '교재 소개가 없습니다.';
-
-    } catch (error) {
-        console.error('에러 발생:', error);
-        alert('책 정보를 불러오는 중 오류가 발생했습니다.');
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    bookData();
+    // 2️⃣ tmpBox로 스크롤 이동
+    const tmpBox = document.getElementById('tmpBox');
+    // document.querySelectorAll('.tab-content > div').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 });

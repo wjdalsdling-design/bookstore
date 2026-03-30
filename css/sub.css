@@ -47,7 +47,7 @@ p {
     display: flex;
     justify-content: center; /* 자식 가운데 정렬 */
     align-items: center;     /* 자식 가운데 정렬 */
-    background-color: #f5f5f5c0;
+    background-color: #e8f1fdc0;
 }
 
 .sub_box {
@@ -74,10 +74,11 @@ p {
 .price {
     font-size: 28px; /* 글씨 키움 */
     font-weight: bold;
-    color: red;
+    color: #000;
     margin-bottom: 15px;
 }
 
+ 
 /* ====== 테이블 ====== */
 .book_info_table {
     width: 100%;
@@ -107,7 +108,9 @@ p {
 }
 
 .btn_area button:first-child {
-    background-color: green;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
 }
 
 .btn_area {
@@ -145,9 +148,18 @@ p {
     border-radius: 6px;       /* 선택 사항: 모서리 둥글게 */
 }
 
-.img_main {
+.img_main {    
     text-align: center; /* 이미지 가운데 */
 }
+
+.img_main .inner {
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.img_main .inner.open {
+  max-height: 2890px;
+} 
 
 .img_main img {
     max-width: 100%; /* 화면 크기 맞춤 */
@@ -156,7 +168,9 @@ p {
 }
 
 
-
+main h3 {
+  padding-top: 30px;
+}
 
 #new {
   position: relative;
@@ -165,7 +179,6 @@ p {
   overflow: hidden;
   border-radius: 8px;
   background: #fff;
-  padding: 10px 0;
 }
 
 .swiper-wrapper {
@@ -271,54 +284,15 @@ p {
 #prevBtn { left: 5px; }
 #nextBtn { right: 5px; }
 
-.accordion-container {
-  width: 100%;
-  margin: 20px auto;
-  border: 1px solid #ddd;
-}
 
-.accordion-header {
-  background-color: #f4f4f4;
-  padding: 15px;
-  cursor: pointer;
-  font-weight: bold;
-  border-bottom: 1px solid #ddd;
-  transition: background-color 0.3s;
+/* content */
+#content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
-.icon {
-  transition: transform 0.3s ease;
-}
-
-/* active 클래스가 붙으면 아이콘을 180도 회전 */
-.accordion-item.active .icon {
-  transform: rotate(180deg);
-}
-
-.accordion-header:hover {
-  background-color: #e0e0e0;
-}
-
-.accordion-content {
-  height: 0;
-  overflow: hidden;
-  transition: all 0.5s ease-out;
-  background-color: white;
-  padding: 0 15px;
-}
-
-.accordion-content p {
-  padding: 15px 0;
-  margin: 0;
-}
-
-/* 활성화 된 항목 스타일 */
-.accordion-item.active .accordion-content {
-  height: 50px;
-  padding: 0 15px;
+.tab-content {
+  width: 75%;
 }
 
 .tab-content ul {
@@ -335,8 +309,11 @@ p {
 
 .tab-buttons {
   display: flex;
-  border-bottom: 2px solid #ccc;
   margin-bottom: 10px;
+  width: 100%;
+  position: sticky;
+  top : 0;
+  background-color: #fff;
 }
 
 .tab-button {
@@ -361,12 +338,132 @@ p {
 }
 
 /* 내용 영역 스타일 */
+.tab-content{
+  behavior: 'smooth';
+}
+
 .tab-content>div {
-  display: none;
+  /* display: none; */
   padding: 10px 0;
-  border-top: 1px solid #ddd;
 }
 
 .tab-content>div.active {
   display: block;
+}
+
+
+/* cord_container */
+
+.card_container {
+  width: 100%;
+}
+
+.card {
+  background: #f5f5f5;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tags span {
+  background: #eaeaea;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.tags {
+  margin-top: 10px;
+}
+
+.text {
+  margin-top: 10px;
+  color: #555;
+  max-height: 60px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.text.open {
+  max-height: 500px;
+}
+
+.toggle {
+  display: inline-block;
+  margin-top: 10px;
+  cursor: pointer;
+  color: #666;
+}
+
+#delivery {
+  border-top: 1px solid #ddd;
+  margin-bottom: 50px;
+}
+
+
+.tabsticky {
+  width: 22%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  align-self: flex-start;
+  padding: 20px;
+  position: sticky;
+  top: 20px;
+}
+
+#sticky_title {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.sticky_price_box {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sticky_price_box span {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+.sticky_btn_wrap {
+  display: flex;
+  gap: 20px;      /* 버튼 사이 간격 */
+  margin-top: 20px;
+  width: 100%;     /* 컨테이너 전체 너비 */
+}
+
+.sticky_btn_wrap button {
+  flex: 1; 
+  padding: 10px 0;          /* 상하 여유 충분 */
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 8px;       /* 약간 둥근 모서리 */
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.btn_cart {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;   /* 옅고 얇은 외곽선 */
+}
+
+/* 바로 구매하기 버튼 */
+.btn_buy {
+  background-color: #0054ff; /* 파란 배경 */
+  color: #fff;               /* 흰 글씨 */
+  border: none;
 }
